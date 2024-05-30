@@ -34,3 +34,13 @@ export type SimilarityArgs<T> = {
 export type SimilarityResult<T, A> = Array<
   Prisma.Result<T, A, "findFirst"> & { [key: `${string}_score`]: number } & { [key: string]: any }
 >;
+
+export type SimilarityFieldQuery = {
+  text: string;
+  threshold?: number;
+}
+
+export type SimilarityNameCity = {
+  name: SimilarityFieldQuery
+  city: SimilarityFieldQuery
+}
